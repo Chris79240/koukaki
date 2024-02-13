@@ -1,0 +1,59 @@
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 18em;
+  padding-bottom: 1em;
+  overflow: hidden;
+
+  &::before {
+    content: url('./assets/images/Sunflower.png');
+    position: absolute;
+    left: 4em;
+    top: 0em;
+  }
+  &::after {
+    content: url('./assets/images/orchid.png');
+    position: absolute;
+    right: -4em;
+    bottom: 7.8em;
+
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+
+    li {
+      flex: 1;
+      text-align: center;
+      a {
+        text-decoration: none;
+      }
+    }
+    &::after {
+      content: url('./assets/images/hibiscus_footer.png');
+      position: absolute;
+      left: calc(50% - 323px);
+      bottom: -28.5em;
+      z-index: -1;
+    }
+  }
+}
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+  .site-footer {
+    &::before {
+      content: '';
+
+    }
+  }
+}
+@media all and (max-width: #{$breakpoint__large_phone}) {
+  .site-footer {
+    &::after {
+      content: '';
+
+    }
+  }
+}

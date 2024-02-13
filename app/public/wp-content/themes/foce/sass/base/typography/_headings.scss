@@ -1,0 +1,45 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: $font__titles;
+	font-weight: bold;
+}
+h2 {
+	color: $color__background-body;
+	font-size: 4.429rem;
+	background-image: url("./assets/images/purple_title_bg.png");
+	background-color: $color__background-body;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 1em 2em;
+	margin: 0;
+	background-position: center;
+	text-align: center;
+}
+h3 {
+	color: $color__background-body;
+	font-size: 3rem;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 1em 2em;
+	margin: 0;
+	background-position: center;
+	text-align: center;
+}
+
+@media all and(max-width: #{$breakpoint__laptop}) {
+	h3 {
+		font-size: 2.5rem;
+	}
+
+}
+
+@media all and (max-width: #{$breakpoint__large_phone}) {
+	h2 {
+		font-size: 3rem;
+	}
+}
