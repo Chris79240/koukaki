@@ -1,0 +1,40 @@
+.story #place{
+    background-image: url('../assets/images/Studio_Koukaki-image_place.png');
+}
+
+.petit-nuage {
+    position: absolute;
+    margin-left: 52%;
+    filter: blur(10px);
+    margin-top: -15%;
+    animation: moveCloud 55s ease-out 10s infinite;
+}
+
+@keyframes moveCloud {
+    0% {
+        transform: translate(500px);
+    }
+    100% {
+        transform: translate(-50px);
+    }
+}
+
+#place .gros-nuage {
+    position: absolute;
+    margin-top: -32%;
+    margin-left: 65%;
+    filter: blur(10px);
+    animation: moveCloud 55s linear 10s infinite;
+}
+
+@keyframes moveCloud {
+    0% {
+        transform: translate(500px);
+    }
+    100% {
+        transform: translate(-50px);
+    }
+}
+
+
+

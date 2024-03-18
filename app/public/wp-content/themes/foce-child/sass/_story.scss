@@ -1,0 +1,33 @@
+.story {
+    position: relative;
+}
+
+.story h2::after {
+    position: absolute;
+    left: 0.7em;
+    top: 6em;
+    animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+.story__article::after {
+    position: absolute;
+    animation: spin 2s linear infinite
+    }
+    
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
