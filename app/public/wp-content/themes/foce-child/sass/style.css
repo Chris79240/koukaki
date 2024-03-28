@@ -1,88 +1,10 @@
 @charset "UTF-8";
-.main-navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 80px;
-  font-size: calc(0.5rem + 1.5vw);
-  width: 1440px;
-}
-
-.main-navigation h1 {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: 700;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-button {
-  padding: 2px;
-}
-
-.site-header {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100px;
-  top: -20px;
-}
-
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.nav h1 {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.nav span {
-  font-weight: 700;
-  z-index: 16;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.nav-toggler {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; /* Espacement équitable */
-  height: 24px; /* Hauteur totale du bouton du menu*/
-  z-index: 18;
-}
-
 .line {
   position: absolute;
   display: block;
-  width: 50px;
-  height: 15px;
   background: #000;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  width: 35px !important;
+  height: 20px;
 }
 
 .l1 {
@@ -109,35 +31,219 @@ button {
           transform: translateY(0) rotate(-135deg);
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 60%; /* ou la largeur souhaitée */
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  left: 90%;
+  height: 35px;
+}
+
+@media screen and (max-width: 700px) {
+  .main-navigation ul {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    padding-left: 350px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-navigation ul .site-title {
+    font-size: 16px;
+  }
+}
+.main-navigation.menu-burger {
+  height: 80px;
+}
+
+.main-navigation.menu-burger ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body.burger {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+body.burger.open {
+  max-width: 1440px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-animation: fadeIn 1.4s ease-out 0.4s both;
+          animation: fadeIn 1.4s ease-out 0.4s both;
+}
+
+.menu-ouvert {
+  position: absolute;
+  width: 100%;
   height: 100vh;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-}
-
-nav.active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
   background-color: #FFF5E9;
-  z-index: 20;
+  color: black;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 1s ease, visibility 0.5s ease;
+  transition: opacity 1s ease, visibility 0.5s ease;
 }
 
-nav a {
-  color: #000;
-  font-size: 30px;
+.menu-ouvert ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+}
+
+.menu-ouvert li {
+  font-size: 65px;
+  line-height: 115px;
+}
+
+.menu-ouvert ul li {
+  margin-bottom: 1rem;
+}
+
+.menu-ouvert li a:hover {
+  color: black;
+  text-shadow: 0px 0px 14px #FF5C00;
+}
+
+.ouvrir {
   display: block;
-  margin: 10px 0;
-  text-decoration: underline;
 }
 
+.fermer {
+  display: none;
+}
+
+.open .ouvrir {
+  display: none;
+}
+
+.open .fermer {
+  display: block;
+}
+
+.open .menu-ouvert {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 1s ease, visibility 0.5s ease;
+  transition: opacity 1s ease, visibility 0.5s ease;
+}
+
+.logo-menu {
+  text-align: center;
+  padding: 2rem;
+}
+
+.logo-menu img {
+  width: 170px;
+  height: auto;
+  -webkit-filter: drop-shadow(0px 0px 26.0937px rgba(255, 92, 0, 0.6));
+          filter: drop-shadow(0px 0px 26.0937px rgba(255, 92, 0, 0.6));
+}
+
+.liste-burger li {
+  margin-top: 8px;
+}
+
+.burger-menu-footer-link a {
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+.images-menu img {
+  position: absolute;
+}
+
+.orchidee {
+  top: 5em;
+  left: 0;
+  -webkit-animation: rotateFlower 10s linear infinite;
+          animation: rotateFlower 10s linear infinite;
+}
+
+.fleur {
+  top: 33em;
+  left: 17em;
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+}
+
+.images-menu img.fleur {
+  width: 5%;
+  height: auto;
+}
+
+.marguerite {
+  top: 9em;
+  right: 16em;
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
+}
+
+.images-menu img.marguerite {
+  width: 13%;
+  height: auto;
+}
+
+.hibiscus {
+  right: 0;
+  -webkit-animation: rotateFlower 10s linear infinite;
+          animation: rotateFlower 10s linear infinite;
+  bottom: 20em;
+}
+
+.fleurMauve {
+  right: 0;
+  -webkit-animation: rotateFlower 4s linear infinite;
+          animation: rotateFlower 4s linear infinite;
+  top: 28em;
+}
+
+.chat-mauve {
+  top: 14em;
+  left: 20em;
+  -webkit-animation: float 8s 3s infinite ease-in-out;
+          animation: float 8s 3s infinite ease-in-out;
+}
+
+.images-menu img.chat-mauve {
+  width: 10%;
+  height: auto;
+}
+
+.chat-orange {
+  top: 50em;
+  left: 6em;
+  -webkit-animation: float 10s 2s infinite ease-in-out;
+          animation: float 10s 2s infinite ease-in-out;
+}
+
+.images-menu img.chat-orange {
+  width: 8%;
+  height: auto;
+}
+
+.chat-gris {
+  top: 32em;
+  right: 23em;
+  -webkit-animation: float 12s 4s infinite ease-in-out;
+          animation: float 12s 4s infinite ease-in-out;
+}
+
+.images-menu img.chat-gris {
+  width: 8%;
+  height: auto;
+}
+
+/* Positionne le logo en parallaxe de manière absolue et applique une animation de révélation personnalisée */
 .banner__parallaxe-logo {
   position: absolute;
   -webkit-animation: reveal linear both;
@@ -146,20 +252,116 @@ nav a {
   animation-range: entry-crossing 0% contain 50%;
 }
 
+/* Style pour les images dans la class banner, les positionne de manière absolue, et applique un effet de flottement */
 .banner img {
-  width: 30%;
+  position: absolute;
+  top: 400px; /* Position verticale */
+  width: 30%; /* Largeur de l'image */
+  -webkit-animation: float 8s 3s infinite ease-in-out;
+          animation: float 8s 3s infinite ease-in-out; /* Animation de flottement avec délai de 3s, répétée indéfiniment */
 }
 
+/* Définit l'animation de flottement pour créer un mouvement dynamique de l'image */
+@-webkit-keyframes float {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); /* Position initiale et finale identique pour un cycle continu */
+  }
+  10% {
+    -webkit-transform: translate3d(-6px, -7px, 0);
+            transform: translate3d(-6px, -7px, 0);
+  }
+  20% {
+    -webkit-transform: translate3d(12px, 14px, 0);
+            transform: translate3d(12px, 14px, 0);
+  }
+  30% {
+    -webkit-transform: translate3d(-4px, -5px, 0);
+            transform: translate3d(-4px, -5px, 0);
+  }
+  40% {
+    -webkit-transform: translate3d(5px, 8px, 0);
+            transform: translate3d(5px, 8px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-12px, -13px, 0);
+            transform: translate3d(-12px, -13px, 0);
+  }
+  60% {
+    -webkit-transform: translate3d(5px, -8px, 0);
+            transform: translate3d(5px, -8px, 0);
+  }
+  70% {
+    -webkit-transform: translate3d(-12px, 10px, 0);
+            transform: translate3d(-12px, 10px, 0);
+  }
+  80% {
+    -webkit-transform: translate3d(9px, 8px, 0);
+            transform: translate3d(9px, 8px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(-10px, -10px, 0);
+            transform: translate3d(-10px, -10px, 0);
+  }
+}
+@keyframes float {
+  0%, 100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); /* Position initiale et finale identique pour un cycle continu */
+  }
+  10% {
+    -webkit-transform: translate3d(-6px, -7px, 0);
+            transform: translate3d(-6px, -7px, 0);
+  }
+  20% {
+    -webkit-transform: translate3d(12px, 14px, 0);
+            transform: translate3d(12px, 14px, 0);
+  }
+  30% {
+    -webkit-transform: translate3d(-4px, -5px, 0);
+            transform: translate3d(-4px, -5px, 0);
+  }
+  40% {
+    -webkit-transform: translate3d(5px, 8px, 0);
+            transform: translate3d(5px, 8px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-12px, -13px, 0);
+            transform: translate3d(-12px, -13px, 0);
+  }
+  60% {
+    -webkit-transform: translate3d(5px, -8px, 0);
+            transform: translate3d(5px, -8px, 0);
+  }
+  70% {
+    -webkit-transform: translate3d(-12px, 10px, 0);
+            transform: translate3d(-12px, 10px, 0);
+  }
+  80% {
+    -webkit-transform: translate3d(9px, 8px, 0);
+            transform: translate3d(9px, 8px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(-10px, -10px, 0);
+            transform: translate3d(-10px, -10px, 0);
+  }
+}
+/* Ajuste la marge à droite pour les titres h3 dans la section des personnages du récit,
+   décalant le texte vers la gauche pour une mise en page spécifique. */
 .story #characters h3 {
   margin-right: 45%;
 }
 
+/* Définit le style de base pour le conteneur Swiper, 
+   y compris sa largeur et l'espacement au-dessus et en dessous pour aérer le contenu. */
 .swiper {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
+/* Style pour chaque slide du Swiper, définissant sa taille, 
+   le positionnement et la taille de l'arrière-plan, et l'alignement du texte. */
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -168,23 +370,41 @@ nav a {
   text-align: center;
 }
 
+/* Assure que les images dans les slides Swiper prennent toute la largeur disponible,
+   permettant une réponse visuelle cohérente à différentes tailles d'écran. */
 .swiper-slide img {
   display: block;
   width: 100%;
 }
 
+/* Ajuste la marge supérieure pour les titres h4 dans les slides Swiper,
+   positionnant le texte plus près de l'élément au-dessus. */
+.swiper-slide h4 {
+  margin-top: -10px;
+}
+
+/* Positionne la section .story par rapport à ses éléments enfants */
 .story {
   position: relative;
 }
 
+/* Ajoute une pseudo-élément après les h2 dans .story, le positionne fixement, et applique une animation de rotation */
 .story h2::after {
-  position: absolute;
+  position: fixed;
   left: 0.7em;
   top: 6em;
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+  -webkit-animation: spin 6s linear infinite;
+          animation: spin 6s linear infinite;
 }
 
+/* Ajoute une pseudo-élément après .story__article, le positionne absolument dans .story, et applique une animation de rotation */
+.story__article::after {
+  position: absolute;
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+}
+
+/* Définit les keyframes pour l'animation spin, qui fait tourner l'élément de 360 degrés */
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -195,7 +415,6 @@ nav a {
             transform: rotate(360deg);
   }
 }
-
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -206,44 +425,29 @@ nav a {
             transform: rotate(360deg);
   }
 }
-.story__article::after {
-  position: absolute;
-  -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
+/* Ajoute une pseudo-élément avant les h2 dans .studio, 
+   le positionne absolument, et applique une animation de rotation */
 .studio h2::before {
   position: absolute;
-  -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
 }
 
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
+/* Ajoute une pseudo-élément après les h2 dans .studio, 
+   le positionne absolument, et applique une animation de rotation */
 .studio h2::after {
   position: absolute;
-  -webkit-animation: spin 3s linear infinite;
-          animation: spin 3s linear infinite;
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
 }
 
+/* Applique une animation de fondu à l'élément h2 dans #studio */
+#studio h2 {
+  -webkit-animation: fadein 4s;
+          animation: fadein 4s;
+}
+
+/* Définit les keyframes pour l'animation spin, qui fait tourner l'élément de 360 degrés */
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -254,59 +458,81 @@ nav a {
             transform: rotate(360deg);
   }
 }
+/* Définit les keyframes pour l'animation fadein, 
+   faisant varier l'opacité de 0 (complètement transparent) à 1 (complètement opaque) */
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Applique une image de fond à l'élément #place situé dans .story */
 .story #place {
   background-image: url("../assets/images/Studio_Koukaki-image_place.png");
 }
 
-.petit-nuage {
+/* Style commun pour petit-nuage et gros-nuage : positionnement absolu et flou */
+.petit-nuage, #place .gros-nuage {
   position: absolute;
-  margin-left: 52%;
   -webkit-filter: blur(10px);
           filter: blur(10px);
+}
+
+/* Positionne spécifiquement le petit nuage à 55% à gauche et 15% au-dessus du point de départ */
+.petit-nuage {
+  margin-left: 55%;
   margin-top: -15%;
-  -webkit-animation: moveCloud 55s ease-out 10s infinite;
-          animation: moveCloud 55s ease-out 10s infinite;
 }
 
-@-webkit-keyframes moveCloud {
-  0% {
-    -webkit-transform: translate(500px);
-            transform: translate(500px);
-  }
-  100% {
-    -webkit-transform: translate(-50px);
-            transform: translate(-50px);
-  }
-}
-
-@keyframes moveCloud {
-  0% {
-    -webkit-transform: translate(500px);
-            transform: translate(500px);
-  }
-  100% {
-    -webkit-transform: translate(-50px);
-            transform: translate(-50px);
-  }
-}
+/* Positionne spécifiquement le gros nuage à 65% à gauche et 32% au-dessus du point de départ */
 #place .gros-nuage {
-  position: absolute;
   margin-top: -32%;
   margin-left: 65%;
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
-  -webkit-animation: moveCloud 55s linear 10s infinite;
-          animation: moveCloud 55s linear 10s infinite;
 }
 
-@keyframes moveCloud {
+/* Définit l'animation à ajouter aux nuages lorsqu'ils seront visibles à l'écran, 
+   avec une durée de 4 secondes, un mouvement linéaire et un maintien du dernier frame */
+.animate {
+  -webkit-animation: moveCloud 4s linear forwards;
+          animation: moveCloud 4s linear forwards;
+}
+
+/* Définit les étapes de l'animation moveCloud, 
+   démarrant à -300px à gauche de la position initiale et revenant à cette position initiale */
+@-webkit-keyframes moveCloud {
   0% {
-    -webkit-transform: translate(500px);
-            transform: translate(500px);
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px); /* Début de l'animation à gauche */
   }
   100% {
-    -webkit-transform: translate(-50px);
-            transform: translate(-50px);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); /* Fin de l'animation à la position initiale */
+  }
+}
+@keyframes moveCloud {
+  0% {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px); /* Début de l'animation à gauche */
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); /* Fin de l'animation à la position initiale */
   }
 }
 .nomination img {
@@ -314,51 +540,82 @@ nav a {
   margin-top: 200px;
 }
 
+/* Définit l'animation pour l'élément avant le .site-footer */
 .site-footer::before {
   position: absolute;
-  -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite; /* Fait tourner l'élément en 3 secondes de manière continue */
 }
 
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
+/* Applique l'animation à l'élément après la liste ul dans .site-footer */
 .site-footer ul::after {
   position: absolute;
-  -webkit-animation: spin 3s linear infinite;
-          animation: spin 3s linear infinite;
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite; /* Fait tourner l'élément en 5 secondes de manière continue */
 }
 
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
+/* Définit l'animation pour l'élément après le .site-footer */
 .site-footer::after {
   position: absolute;
-  -webkit-animation: spin 2s linear infinite;
-          animation: spin 2s linear infinite;
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite; /* Fait tourner l'élément en 4 secondes de manière continue */
 }
 
+/* Définit les keyframes pour l'animation spin utilisée ci-dessus */
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+            transform: rotate(0deg); /* Début de l'animation sans rotation */
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+            transform: rotate(360deg); /* Termine l'animation après une rotation complète */
+  }
+}
+/* Masquer la vidéo et le logo en parallaxe sur les écrans de moins de 768px */
+@media (max-width: 768px) {
+  .banner__video {
+    display: none; /* Masque la vidéo */
+  }
+  .banner__parallaxe-logo {
+    display: none; /* Masque le logo en parallaxe */
+  }
+}
+/* Règles pour ajuster le positionnement de la bannière sur les écrans plus grands que 768px */
+@media (min-width: 769px) {
+  .banner {
+    position: relative; /* Définit la position relative pour la bannière, permettant un positionnement correct des éléments absolus à l'intérieur */
+  }
+}
+/* Requête média pour les écrans jusqu'à 767px */
+@media (max-width: 767px) {
+  .toggle {
+    left: 80%; /* Ajuste la position du bouton toggle */
+  }
+  .main-navigation ul {
+    padding-left: 250px; /* Ajuste le padding pour la navigation principale */
+  }
+  .menu-ouvert li {
+    font-size: 45px; /* Réduit la taille de la police pour les éléments du menu ouvert */
+    line-height: 95px; /* Ajuste l'espacement des lignes */
+  }
+  .images-menu img {
+    width: 15%; /* Ajuste la largeur des images dans le menu */
+  }
+}
+/* Requête média pour les écrans jusqu'à 390px */
+@media (max-width: 390px) {
+  .toggle {
+    left: 70%; /* Ajuste davantage la position du bouton toggle pour les petits écrans */
+  }
+  .main-navigation ul {
+    padding-left: 150px; /* Ajuste le padding pour la navigation principale sur les très petits écrans */
+  }
+  .menu-ouvert li {
+    font-size: 35px; /* Réduit encore la taille de la police pour les éléments du menu ouvert */
+    line-height: 75px; /* Ajuste l'espacement des lignes pour les petits écrans */
+  }
+  .images-menu img {
+    width: 25%; /* Ajuste la largeur des images dans le menu pour les très petits écrans */
   }
 }/*# sourceMappingURL=style.css.map */

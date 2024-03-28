@@ -1,41 +1,27 @@
+/* Définit l'animation pour l'élément avant le .site-footer */
 .site-footer::before {
     position: absolute;
-    animation: spin 2s linear infinite;
+    animation: spin 3s linear infinite; /* Fait tourner l'élément en 3 secondes de manière continue */
 }
     
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
+/* Applique l'animation à l'élément après la liste ul dans .site-footer */
 .site-footer ul::after {
     position: absolute;
-    animation: spin 3s linear infinite;
-}
-    
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    animation: spin 5s linear infinite; /* Fait tourner l'élément en 5 secondes de manière continue */
 }
 
+/* Définit l'animation pour l'élément après le .site-footer */
 .site-footer::after {
     position: absolute;
-    animation: spin 2s linear infinite;
+    animation: spin 4s linear infinite; /* Fait tourner l'élément en 4 secondes de manière continue */
 }
     
+/* Définit les keyframes pour l'animation spin utilisée ci-dessus */
 @keyframes spin {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg); /* Début de l'animation sans rotation */
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg); /* Termine l'animation après une rotation complète */
     }
 }

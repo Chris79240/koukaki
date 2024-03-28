@@ -1,26 +1,36 @@
-.story #characters h3 {
+/* Ajuste la marge à droite pour les titres h3 dans la section des personnages du récit,
+   décalant le texte vers la gauche pour une mise en page spécifique. */
+   .story #characters h3 {
     margin-right: 45%;
 }
 
-.swiper-wrapper {
-
-}
-
+/* Définit le style de base pour le conteneur Swiper, 
+   y compris sa largeur et l'espacement au-dessus et en dessous pour aérer le contenu. */
 .swiper {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-  }
+}
 
+/* Style pour chaque slide du Swiper, définissant sa taille, 
+   le positionnement et la taille de l'arrière-plan, et l'alignement du texte. */
 .swiper-slide {
-    background-position:center;
+    background-position: center;
     background-size: cover;
     width: 420px;
     height: 420px;
     text-align: center;
 }
 
+/* Assure que les images dans les slides Swiper prennent toute la largeur disponible,
+   permettant une réponse visuelle cohérente à différentes tailles d'écran. */
 .swiper-slide img {
     display: block;
     width: 100%;
+}
+
+/* Ajuste la marge supérieure pour les titres h4 dans les slides Swiper,
+   positionnant le texte plus près de l'élément au-dessus. */
+.swiper-slide h4 {
+    margin-top: -10px;
 }

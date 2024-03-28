@@ -1,3 +1,4 @@
+/* Positionne le logo en parallaxe de manière absolue et applique une animation de révélation personnalisée */
 .banner__parallaxe-logo {
     position: absolute;
     animation: reveal linear both;
@@ -5,16 +6,44 @@
     animation-range: entry-crossing 0% contain 50%;
   }
 
+  /* Style pour les images dans la class banner, les positionne de manière absolue, et applique un effet de flottement */
   .banner img {
-    width: 30%;
+    position: absolute;
+    top: 400px; /* Position verticale */
+    width: 30%; /* Largeur de l'image */
+    animation: float 8s 3s infinite ease-in-out; /* Animation de flottement avec délai de 3s, répétée indéfiniment */
   }
 
-
-
-
-
-
-
-
-
-
+  /* Définit l'animation de flottement pour créer un mouvement dynamique de l'image */
+@keyframes float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0); /* Position initiale et finale identique pour un cycle continu */
+  }
+  10% {
+    transform: translate3d(-6px, -7px, 0);
+  }
+  20% {
+    transform: translate3d(12px, 14px, 0);
+  }
+  30% {
+    transform: translate3d(-4px, -5px, 0);
+  }
+  40% {
+    transform: translate3d(5px, 8px, 0);
+  }
+  50% {
+    transform: translate3d(-12px, -13px, 0);
+  }
+  60% {
+    transform: translate3d(5px, -8px, 0);
+  }
+  70% {
+    transform: translate3d(-12px, 10px, 0);
+  }
+  80% {
+    transform: translate3d(9px, 8px, 0);
+  }
+  90% {
+    transform: translate3d(-10px, -10px, 0);
+  }
+}

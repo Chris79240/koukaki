@@ -1,101 +1,232 @@
-.main-navigation {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 80px;
-    font-size: calc(0.5rem + 1.5vw);
-    width: 1440px;
-}
+// ******************************MENU BURGER******************************
 
-.main-navigation h1 {
-  align-items: center;
-  font-weight: 700;
-  font-size: 36px;
-  margin-left: 50px;
-}
+  .line {
+    position: absolute;
+    display: block;
+    background: #000;
+    width: 35px !important;
+    height: 20px;
+  }
 
-button { 
-  padding: 2px;
-}
+  // Styles pour animer les lignes du menu burger en "X" lorsqu'il est actif
+  .l1 {
+    transform: translateY(-10px);
+  }
+  .l3 {
+    transform: translateY(10px);
+  }
+  .nav-toggler.active .l1 {
+    transform: translateY(0) rotate(135deg);
+  }
+  .nav-toggler.active .l2 {
+    opacity: 0;
+  }
+  .nav-toggler.active .l3 {
+    transform: translateY(0) rotate(-135deg);
+  }
 
-.site-header {
-  position : absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100px;
-  top: -20px;
-}
+  // Positionnement du bouton toggle
+  .toggle {
+      position: absolute;
+      cursor: pointer;
+      left: 90%;
+      height: 35px;
+  }
 
-  .nav {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    }
+  // Gestion du style de navigation principale pour différentes tailles d'écran
+  @media screen and (max-width: 700px) {
+      .main-navigation ul {
+          display: flex !important; 
+          padding-left: 350px;
+      }   
+  }
 
-  .nav h1 {
-    
-    
-    align-items: center;
-    }
+  @media screen and (max-width: 600px) {
+      .main-navigation ul .site-title {
+          font-size: 16px; 
+      }
+  }
 
-  .nav span {
-    font-weight: 700;
-    z-index: 16;
-    align-items: center;
-    }
 
-  .nav-toggler {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around; /* Espacement équitable */
-      height: 24px; /* Hauteur totale du bouton du menu*/
-      z-index: 18;
+
+      .main-navigation.menu-burger {
+          height: 80px ;
+      }
+      
+      .main-navigation.menu-burger ul {
+          display: flex;
       }
 
-      .line {
-        position: absolute;
-        display: block;
-        width: 50px;
-        height: 15px;
-        background: #000;
-        transition: all 0.2s ease-out;
+      // Styles du corps pour le menu burger
+      body.burger {
+          max-width: 1440px;
+          width: 100%;
+          margin: 0 auto;
+          overflow-x: hidden;
       }
 
-      .l1 {
-        transform: translateY(-10px);
+
+  // ******************************Styles par défaut lorsque le menu est ouvert******************************
+      body.burger.open {    
+          max-width: 1440px;
+          width: 100%;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          animation: fadeIn 1.4s ease-out 0.4s both;
       }
-      .l3 {
-        transform: translateY(10px);
+      
+      .menu-ouvert {
+          position: absolute;
+          width: 100%;
+          height: 100vh;
+          background-color: #FFF5E9;
+          color: black;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 1s ease, visibility 0.5s ease; 
       }
-      .nav-toggler.active .l1 {
-        transform: translateY(0) rotate(135deg);
+
+      .menu-ouvert ul {
+          display: flex;
+          flex-direction: column;
+          padding: 2rem;
       }
-      .nav-toggler.active .l2 {
-        opacity: 0;
+
+      .menu-ouvert li {
+          font-size: 65px;
+          line-height: 115px;   
       }
-      .nav-toggler.active .l3 {
-        transform: translateY(0) rotate(-135deg);
+
+      .menu-ouvert ul li {
+          margin-bottom: 1rem; 
       }
-    nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 60%; /* ou la largeur souhaitée */
-        height: 100vh;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-out;
+
+      .menu-ouvert li a:hover {
+          color: black;
+          text-shadow: 0px 0px 14px #FF5C00;
+      }
 
 
+  // ******************************Gestion de l'ouverture et fermeture du menu******************************
+      .ouvrir {
+          display: block;
       }
-      nav.active {
-        transform: translateX(0);
-        background-color: #FFF5E9;
-        z-index: 20;
+
+      .fermer {
+          display: none;
       }
-      nav a {
-        color: #000;
-        font-size: 30px;
-        display: block;
-        margin: 10px 0;
-        text-decoration: underline;
+
+      .open .ouvrir {
+          display: none;
       }
+
+      .open .fermer {
+          display: block;
+      }
+
+      .open .menu-ouvert {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity 1s ease, visibility 0.5s ease; 
+      }
+  
+  // ******************************Logo du menu burger****************************** 
+      .logo-menu {
+          text-align: center; 
+          padding: 2rem;
+      }
+
+      .logo-menu img {
+          width: 170px; 
+          height: auto; 
+          filter: drop-shadow(0px 0px 26.0937px rgba(255, 92, 0, 0.6));
+      }
+
+      .liste-burger li {
+          margin-top: 8px; 
+      }
+
+  // ****************************** Taille du texte footer du menu burger ******************************
+  .burger-menu-footer-link a{
+    margin-top: 60px;  
+    font-size: 14px;
+  }
+
+  // **************************Animations Images**********************************
+
+      .images-menu img {
+          position: absolute;
+      }
+
+      .orchidee {
+          top: 5em; 
+          left: 0;
+          animation: rotateFlower 10s linear infinite;
+      }
+
+      .fleur {
+          top: 33em; 
+          left: 17em;
+          animation: spin 4s linear infinite;
+      }
+
+      .images-menu img.fleur {
+          width: 5%; 
+          height: auto; 
+      } 
+  
+      .marguerite {
+          top: 9em; 
+          right: 16em;   
+          animation: spin 5s linear infinite;
+      }
+
+      .images-menu img.marguerite {
+          width: 13%; 
+          height: auto; 
+      } 
+
+      .hibiscus {  
+          right: 0;
+          animation: rotateFlower 10s linear infinite;
+          bottom: 20em ;
+      }
+
+      .fleurMauve {  
+          right: 0;
+          animation: rotateFlower 4s linear infinite;
+          top: 28em ;
+      }
+
+      .chat-mauve {
+          top: 14em; 
+          left: 20em;
+          animation: float 8s 3s infinite ease-in-out;
+      }
+
+      .images-menu img.chat-mauve {
+          width: 10%; 
+          height: auto; 
+      } 
+
+      .chat-orange {
+          top: 50em; 
+          left: 6em;
+          animation: float 10s 2s infinite ease-in-out;
+      }
+
+      .images-menu img.chat-orange {
+          width: 8%; 
+          height: auto; 
+      } 
+
+      .chat-gris {
+          top: 32em; 
+          right: 23em;
+          animation: float 12s 4s infinite ease-in-out;
+      }
+
+      .images-menu img.chat-gris {
+          width: 8%; 
+          height: auto; 
+      } 

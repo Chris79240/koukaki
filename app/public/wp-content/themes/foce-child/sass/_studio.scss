@@ -1,27 +1,42 @@
-.studio h2::before {
+/* Ajoute une pseudo-élément avant les h2 dans .studio, 
+   le positionne absolument, et applique une animation de rotation */
+   .studio h2::before {
     position: absolute;
-    animation: spin 2s linear infinite;
-    }
-    
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
+    animation: spin 4s linear infinite;
+}
 
-    .studio h2::after {
-        position: absolute;
-        animation: spin 3s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+/* Ajoute une pseudo-élément après les h2 dans .studio, 
+   le positionne absolument, et applique une animation de rotation */
+.studio h2::after {
+    position: absolute;
+    animation: spin 5s linear infinite;
+}
+
+/* Applique une animation de fondu à l'élément h2 dans #studio */
+#studio h2 {
+    animation: fadein 4s;
+}
+
+/* Définit les keyframes pour l'animation spin, qui fait tourner l'élément de 360 degrés */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Définit les keyframes pour l'animation fadein, 
+   faisant varier l'opacité de 0 (complètement transparent) à 1 (complètement opaque) */
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

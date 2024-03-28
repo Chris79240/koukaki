@@ -17,7 +17,7 @@ get_header();
 
 
 
-    <section id="#story" class="story" data-aos="fade-up" data-aos-duration="3000">
+    <section id="#story" class="story" data-aos="fade-in" data-aos-anchor-placement="top-bottom">
         <h2>L'histoire</h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
@@ -64,7 +64,7 @@ get_header();
     </section>
 
 
-    <section id="studio" class="studio">
+    <section id="studio" class="studio" data-aos="fade-in" data-aos-duration="3000">
 
         <h2>Studio Koukaki</h2>
         <div>
@@ -73,8 +73,8 @@ get_header();
         </div>
     </section>
 
-    <section id=" nomination aux oscars">
-        <div class="nomination">
+    <section id="nomination aux oscars" class="nomination" data-aos="fade-in" data-aos-duration="3000">
+        <div>
             <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/lespersonnages.png'; ?>" alt="Fleurs d'oranger & chats errants nominé aux oscars">
         </div>
     </section>

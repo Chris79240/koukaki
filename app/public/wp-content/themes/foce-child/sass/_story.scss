@@ -1,28 +1,23 @@
+/* Positionne la section .story par rapport à ses éléments enfants */
 .story {
     position: relative;
 }
 
+/* Ajoute une pseudo-élément après les h2 dans .story, le positionne fixement, et applique une animation de rotation */
 .story h2::after {
-    position: absolute;
+    position: fixed;
     left: 0.7em;
     top: 6em;
-    animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-    
+    animation: spin 6s linear infinite;
+}
+
+/* Ajoute une pseudo-élément après .story__article, le positionne absolument dans .story, et applique une animation de rotation */
 .story__article::after {
     position: absolute;
-    animation: spin 2s linear infinite
-    }
-    
+    animation: spin 4s linear infinite;
+}
+
+/* Définit les keyframes pour l'animation spin, qui fait tourner l'élément de 360 degrés */
 @keyframes spin {
     0% {
         transform: rotate(0deg);

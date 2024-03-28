@@ -1,0 +1,55 @@
+/* Masquer la vidéo et le logo en parallaxe sur les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .banner__video {
+      display: none; /* Masque la vidéo */
+    }
+    .banner__parallaxe-logo {
+      display: none; /* Masque le logo en parallaxe */
+    }
+  }
+  /* Règles pour ajuster le positionnement de la bannière sur les écrans plus grands que 768px */
+@media (min-width: 769px) {
+    .banner {
+      position: relative; /* Définit la position relative pour la bannière, permettant un positionnement correct des éléments absolus à l'intérieur */
+    }
+  };
+  
+  /* Requête média pour les écrans jusqu'à 767px */
+@media (max-width: 767px) {
+    .toggle {
+      left: 80%; /* Ajuste la position du bouton toggle */
+    }
+  
+    .main-navigation ul {
+      padding-left: 250px; /* Ajuste le padding pour la navigation principale */
+    }
+  
+    .menu-ouvert li {
+      font-size: 45px; /* Réduit la taille de la police pour les éléments du menu ouvert */
+      line-height: 95px; /* Ajuste l'espacement des lignes */
+    }
+  
+    .images-menu img {
+      width: 15%; /* Ajuste la largeur des images dans le menu */
+    }
+  }
+  
+  /* Requête média pour les écrans jusqu'à 390px */
+  @media (max-width: 390px) {
+    .toggle {
+      left: 70%; /* Ajuste davantage la position du bouton toggle pour les petits écrans */
+    }
+  
+    .main-navigation ul {
+      padding-left: 150px; /* Ajuste le padding pour la navigation principale sur les très petits écrans */
+    }
+  
+    .menu-ouvert li {
+      font-size: 35px; /* Réduit encore la taille de la police pour les éléments du menu ouvert */
+      line-height: 75px; /* Ajuste l'espacement des lignes pour les petits écrans */
+    }
+  
+    .images-menu img {
+      width: 25%; /* Ajuste la largeur des images dans le menu pour les très petits écrans */
+    }
+  }
