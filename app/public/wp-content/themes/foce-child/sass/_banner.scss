@@ -1,9 +1,6 @@
 /* Positionne le logo en parallaxe de manière absolue et applique une animation de révélation personnalisée */
 .banner__parallaxe-logo {
     position: absolute;
-    animation: reveal linear both;
-    animation-timeline: view(block);
-    animation-range: entry-crossing 0% contain 50%;
   }
 
   /* Style pour les images dans la class banner, les positionne de manière absolue, et applique un effet de flottement */

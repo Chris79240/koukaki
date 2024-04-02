@@ -38,19 +38,6 @@
   height: 35px;
 }
 
-@media screen and (max-width: 700px) {
-  .main-navigation ul {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    padding-left: 350px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .main-navigation ul .site-title {
-    font-size: 16px;
-  }
-}
 .main-navigation.menu-burger {
   height: 80px;
 }
@@ -246,10 +233,6 @@ body.burger.open {
 /* Positionne le logo en parallaxe de manière absolue et applique une animation de révélation personnalisée */
 .banner__parallaxe-logo {
   position: absolute;
-  -webkit-animation: reveal linear both;
-          animation: reveal linear both;
-  animation-timeline: view(block);
-  animation-range: entry-crossing 0% contain 50%;
 }
 
 /* Style pour les images dans la class banner, les positionne de manière absolue, et applique un effet de flottement */
@@ -346,6 +329,67 @@ body.burger.open {
             transform: translate3d(-10px, -10px, 0);
   }
 }
+.amountTitle {
+  opacity: 0;
+  -webkit-animation: animTitle 4s linear forwards;
+          animation: animTitle 4s linear forwards;
+}
+
+@-webkit-keyframes animTitle {
+  from {
+    -webkit-transform: translateY(90px);
+            transform: translateY(90px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animTitle {
+  from {
+    -webkit-transform: translateY(90px);
+            transform: translateY(90px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+h2 {
+  -webkit-animation: reveal linear;
+          animation: reveal linear;
+}
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
 /* Ajuste la marge à droite pour les titres h3 dans la section des personnages du récit,
    décalant le texte vers la gauche pour une mise en page spécifique. */
 .story #characters h3 {
@@ -386,6 +430,11 @@ body.burger.open {
 /* Positionne la section .story par rapport à ses éléments enfants */
 .story {
   position: relative;
+  -webkit-animation: reveal linear;
+          animation: reveal linear;
+  animation-timeline: view();
+  animation-range-start: cover 0%;
+  animation-range-end: contain 50%;
 }
 
 /* Ajoute une pseudo-élément après les h2 dans .story, le positionne fixement, et applique une animation de rotation */
@@ -425,6 +474,14 @@ body.burger.open {
             transform: rotate(360deg);
   }
 }
+.studio {
+  -webkit-animation: reveal linear;
+          animation: reveal linear;
+  animation-timeline: view();
+  animation-range-start: cover 0%;
+  animation-range-end: contain 50%;
+}
+
 /* Ajoute une pseudo-élément avant les h2 dans .studio, 
    le positionne absolument, et applique une animation de rotation */
 .studio h2::before {
@@ -443,8 +500,8 @@ body.burger.open {
 
 /* Applique une animation de fondu à l'élément h2 dans #studio */
 #studio h2 {
-  -webkit-animation: fadein 4s;
-          animation: fadein 4s;
+  -webkit-animation: fadein 6s;
+          animation: fadein 6s;
 }
 
 /* Définit les keyframes pour l'animation spin, qui fait tourner l'élément de 360 degrés */
@@ -489,6 +546,10 @@ body.burger.open {
 
 /* Style commun pour petit-nuage et gros-nuage : positionnement absolu et flou */
 .petit-nuage, #place .gros-nuage {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
   position: absolute;
   -webkit-filter: blur(10px);
           filter: blur(10px);
@@ -496,47 +557,18 @@ body.burger.open {
 
 /* Positionne spécifiquement le petit nuage à 55% à gauche et 15% au-dessus du point de départ */
 .petit-nuage {
-  margin-left: 55%;
   margin-top: -15%;
+  left: 8%;
 }
 
 /* Positionne spécifiquement le gros nuage à 65% à gauche et 32% au-dessus du point de départ */
 #place .gros-nuage {
   margin-top: -32%;
-  margin-left: 65%;
+  left: 20%;
 }
 
-/* Définit l'animation à ajouter aux nuages lorsqu'ils seront visibles à l'écran, 
-   avec une durée de 4 secondes, un mouvement linéaire et un maintien du dernier frame */
-.animate {
-  -webkit-animation: moveCloud 4s linear forwards;
-          animation: moveCloud 4s linear forwards;
-}
-
-/* Définit les étapes de l'animation moveCloud, 
-   démarrant à -300px à gauche de la position initiale et revenant à cette position initiale */
-@-webkit-keyframes moveCloud {
-  0% {
-    -webkit-transform: translateX(-300px);
-            transform: translateX(-300px); /* Début de l'animation à gauche */
-  }
-  100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px); /* Fin de l'animation à la position initiale */
-  }
-}
-@keyframes moveCloud {
-  0% {
-    -webkit-transform: translateX(-300px);
-            transform: translateX(-300px); /* Début de l'animation à gauche */
-  }
-  100% {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px); /* Fin de l'animation à la position initiale */
-  }
-}
 .nomination img {
-  margin-left: 15%;
+  margin-left: 5%;
   margin-top: 200px;
 }
 
@@ -572,13 +604,9 @@ body.burger.open {
             transform: rotate(360deg); /* Termine l'animation après une rotation complète */
   }
 }
-/* Masquer la vidéo et le logo en parallaxe sur les écrans de moins de 768px */
-@media (max-width: 768px) {
-  .banner__video {
-    display: none; /* Masque la vidéo */
-  }
-  .banner__parallaxe-logo {
-    display: none; /* Masque le logo en parallaxe */
+@media (max-width: 1360px) {
+  .story #characters h3 {
+    margin-right: 0;
   }
 }
 /* Règles pour ajuster le positionnement de la bannière sur les écrans plus grands que 768px */
@@ -588,7 +616,12 @@ body.burger.open {
   }
 }
 /* Requête média pour les écrans jusqu'à 767px */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 15px !important;
+    margin-left: -350px;
+    white-space: nowrap;
+  }
   .toggle {
     left: 80%; /* Ajuste la position du bouton toggle */
   }
@@ -601,6 +634,71 @@ body.burger.open {
   }
   .images-menu img {
     width: 15%; /* Ajuste la largeur des images dans le menu */
+  }
+  .banner__video {
+    display: none; /* Masque la vidéo */
+  }
+  .banner__parallaxe-logo {
+    display: none; /* Masque le logo en parallaxe */
+  }
+  .story #characters {
+    margin: -6em;
+  }
+  .story #characters h3 {
+    margin-right: 0;
+    margin-top: 50px;
+  }
+  .swiper-wrapper {
+    width: 60%;
+  }
+  #place .gros-nuage {
+    display: none;
+  }
+  .petit-nuage {
+    display: none;
+  }
+  .studio h2::before {
+    visibility: hidden;
+  }
+  .studio h2::after {
+    background-image: none;
+  }
+  .nomination img {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+  .site-footer::after {
+    visibility: hidden;
+  }
+}
+@media (max-width: 700px) {
+  .site-title h1 {
+    display: none;
+  }
+  .toggle {
+    left: 45%;
+  }
+  .main-navigation ul {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    padding-left: 350px;
+  }
+}
+@media (max-width: 600px) {
+  .main-navigation ul .site-title {
+    font-size: 16px;
+  }
+}
+@media (max-width: 470px) {
+  #studio h2 {
+    font-size: 2rem;
+  }
+  .site-footer ul::after {
+    visibility: hidden;
+  }
+  .site-footer {
+    padding-top: 3em;
   }
 }
 /* Requête média pour les écrans jusqu'à 390px */

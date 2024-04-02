@@ -5,35 +5,19 @@
 
 /* Style commun pour petit-nuage et gros-nuage : positionnement absolu et flou */
 .petit-nuage, #place .gros-nuage {
+    transition: transform 0.2s ease-out;
     position: absolute;
     filter: blur(10px);
 }
 
 /* Positionne spécifiquement le petit nuage à 55% à gauche et 15% au-dessus du point de départ */
 .petit-nuage {
-    margin-left: 55%;
     margin-top: -15%;
+    left: 8%;
 }
 
 /* Positionne spécifiquement le gros nuage à 65% à gauche et 32% au-dessus du point de départ */
 #place .gros-nuage {
-    margin-top: -32%;
-    margin-left: 65%;
-}
-
-/* Définit l'animation à ajouter aux nuages lorsqu'ils seront visibles à l'écran, 
-   avec une durée de 4 secondes, un mouvement linéaire et un maintien du dernier frame */
-.animate {
-    animation: moveCloud 4s linear forwards;
-}
-
-/* Définit les étapes de l'animation moveCloud, 
-   démarrant à -300px à gauche de la position initiale et revenant à cette position initiale */
-@keyframes moveCloud {
-    0% {
-        transform: translateX(-300px); /* Début de l'animation à gauche */
-    }
-    100% {
-        transform: translateX(0px); /* Fin de l'animation à la position initiale */
-    }
+   margin-top: -32%;
+   left: 20%;
 }

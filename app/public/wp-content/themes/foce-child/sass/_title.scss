@@ -1,0 +1,31 @@
+.amountTitle {
+    opacity: 0;
+    animation: animTitle 4s linear forwards;
+}
+
+
+ @keyframes animTitle {
+    from{
+       transform: translateY(90px);
+       opacity: 0;
+    }
+    to{
+       transform: translateY(0);
+       opacity: 1;
+    }
+ }
+
+ h2 {
+    animation: reveal linear;
+ }
+
+ @keyframes slide {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+ }

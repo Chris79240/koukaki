@@ -1,12 +1,9 @@
-/* Masquer la vidéo et le logo en parallaxe sur les écrans de moins de 768px */
-@media (max-width: 768px) {
-    .banner__video {
-      display: none; /* Masque la vidéo */
-    }
-    .banner__parallaxe-logo {
-      display: none; /* Masque le logo en parallaxe */
-    }
+@media (max-width: 1360px) {
+  .story #characters h3 {
+    margin-right: 0;
   }
+}
+
   /* Règles pour ajuster le positionnement de la bannière sur les écrans plus grands que 768px */
 @media (min-width: 769px) {
     .banner {
@@ -15,7 +12,14 @@
   };
   
   /* Requête média pour les écrans jusqu'à 767px */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+
+    .site-title {
+    font-size: 15px !important;
+    margin-left: -350px;
+    white-space: nowrap;
+    }
+
     .toggle {
       left: 80%; /* Ajuste la position du bouton toggle */
     }
@@ -32,10 +36,91 @@
     .images-menu img {
       width: 15%; /* Ajuste la largeur des images dans le menu */
     }
+
+    .banner__video {
+      display: none; /* Masque la vidéo */
+    }
+    .banner__parallaxe-logo {
+      display: none; /* Masque le logo en parallaxe */
+    }
+
+    .story #characters {
+      margin: -6em;
+    }
+
+    .story #characters h3 {
+      margin-right: 0;
+      margin-top: 50px;
+    }
+
+    .swiper-wrapper {
+      width: 60%;
+    }
+
+    #place .gros-nuage {
+      display: none;
+    }
+
+    .petit-nuage {
+      display: none;
+    }
+
+  .studio h2::before {
+    visibility: hidden;
   }
-  
+
+  .studio h2::after {
+    background-image: none;
+  }
+
+  .nomination img {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+
+  .site-footer::after {
+    visibility: hidden;
+  }
+}
+
+  @media (max-width: 700px) { 
+    .site-title h1 {
+      display: none
+    }
+
+    .toggle {
+      left: 45%;
+    }
+
+    .main-navigation ul {
+      display: flex !important; 
+      padding-left: 350px;
+  }   
+}
+
+@media (max-width: 600px) {
+  .main-navigation ul .site-title {
+      font-size: 16px; 
+  }
+}
+
+@media (max-width: 470px) {
+  #studio h2 {
+    font-size: 2rem;
+  }
+
+  .site-footer ul::after{
+    visibility: hidden;
+  }
+
+  .site-footer {
+    padding-top: 3em;
+  }
+}
+
   /* Requête média pour les écrans jusqu'à 390px */
   @media (max-width: 390px) {
+
     .toggle {
       left: 70%; /* Ajuste davantage la position du bouton toggle pour les petits écrans */
     }

@@ -33,22 +33,6 @@
       height: 35px;
   }
 
-  // Gestion du style de navigation principale pour différentes tailles d'écran
-  @media screen and (max-width: 700px) {
-      .main-navigation ul {
-          display: flex !important; 
-          padding-left: 350px;
-      }   
-  }
-
-  @media screen and (max-width: 600px) {
-      .main-navigation ul .site-title {
-          font-size: 16px; 
-      }
-  }
-
-
-
       .main-navigation.menu-burger {
           height: 80px ;
       }

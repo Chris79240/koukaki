@@ -17,8 +17,10 @@ get_header();
 
 
 
-    <section id="#story" class="story" data-aos="fade-in" data-aos-anchor-placement="top-bottom">
-        <h2>L'histoire</h2>
+    <section id="#story" class="story" data-aos="fade-in" data-aos-duration="3000">
+        <h2>
+            <div class="amountTitle">L'histoire</div>
+        </h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
@@ -39,7 +41,9 @@ get_header();
         <article id="characters">
             <div class="main-character">
                 <div class="titre-personnages">
-                    <h3>Les personnages</h3>
+                    <h3>
+                        <div class="amountTitle">Les personnages</div>
+                    </h3>
                 </div>
                 <!-- Ajout du Swiper -->
                 <?php get_template_part('templates-parts/personnages'); ?>
@@ -56,7 +60,9 @@ get_header();
             <div>
                 <img class="gros-nuage" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="gros nuage">
                 <img class="petit-nuage" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="petit nuage">
-                <h3>Le Lieu</h3>
+                <h3>
+                    <div class="amountTitle">Le Lieu</div>
+                </h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
             </div>
 
@@ -66,24 +72,23 @@ get_header();
 
     <section id="studio" class="studio" data-aos="fade-in" data-aos-duration="3000">
 
-        <h2>Studio Koukaki</h2>
+        <h2>
+            <div class="amountTitle">Studio Koukaki</div>
+        </h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
         </div>
-    </section>
+        <!--</section>
 
-    <section id="nomination aux oscars" class="nomination" data-aos="fade-in" data-aos-duration="3000">
-        <div>
+    <section id="nomination aux oscars" class="nomination" data-aos="fade-in" data-aos-duration="3000"> -->
+        <br>
+        <div class="nomination">
             <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/lespersonnages.png'; ?>" alt="Fleurs d'oranger & chats errants nominé aux oscars">
         </div>
     </section>
 
 
-    <script src=" ./index.js/"></script>
-    <script>
-        AOS.init();
-    </script>
 
 </main><!-- #main -->
 

@@ -18,7 +18,7 @@
             <meta charset="<?php bloginfo('charset'); ?>">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="profile" href="https://gmpg.org/xfn/11">
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -72,7 +72,7 @@
                             <div>
                                 <ul class="burger">
                                     <li><a href="#story">Histoire</a></li>
-                                    <li><a href="#character">Personnages</a></li>
+                                    <li><a href="characters">Personnages</a></li>
                                     <li><a href="#place">Lieu</a></li>
                                     <li><a href="#studio">Studio Koukaki</a></li>
                                 </ul>

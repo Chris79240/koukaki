@@ -1,6 +1,10 @@
 /* Positionne la section .story par rapport à ses éléments enfants */
 .story {
     position: relative;
+    animation : reveal linear;
+    animation-timeline : view();
+    animation-range-start: cover 0%;
+    animation-range-end: contain 50%;
 }
 
 /* Ajoute une pseudo-élément après les h2 dans .story, le positionne fixement, et applique une animation de rotation */
